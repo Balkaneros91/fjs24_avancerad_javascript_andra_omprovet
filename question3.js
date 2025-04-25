@@ -1,22 +1,23 @@
-// Fråga 3. (3p) 
-// Generera en lista av li-element med hjälp arraymetoden map 
+// Fråga 3. (3p)
+// Generera en lista av li-element med hjälp arraymetoden map
 // och visa den i index.html i ul-elementet med id movieList
 
 const movies = [
-    { title: "The Matrix", year: 1999 },
-    { title: "The Lord of the Rings: The Fellowship of the Ring", year: 2001 },
-    { title: "The Lord of the Rings: The Two Towers", year: 2002 },
-    { title: "The Lord of the Rings: The Return of the King", year: 2003 },
-    { title: "The Shawshank Redemption", year: 1994 },
-    { title: "The Godfather", year: 1972 },
-    { title: "The Dark Knight", year: 2008 },
-]
-
+  { title: "The Matrix", year: 1999 },
+  { title: "The Lord of the Rings: The Fellowship of the Ring", year: 2001 },
+  { title: "The Lord of the Rings: The Two Towers", year: 2002 },
+  { title: "The Lord of the Rings: The Return of the King", year: 2003 },
+  { title: "The Shawshank Redemption", year: 1994 },
+  { title: "The Godfather", year: 1972 },
+  { title: "The Dark Knight", year: 2008 },
+];
 
 function renderList(movies) {
-// Din kod här:
-
- 
+  // Din kod här:
+  document.getElementById("movieList").innerHTML = movies
+    .map((movie) => `<li>${movie.title} (${movie.year})</li>`)
+    .join(" ");
+  // console.log(movies);
 }
 
 renderList(movies);

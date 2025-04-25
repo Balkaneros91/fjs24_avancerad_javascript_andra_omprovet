@@ -1,4 +1,4 @@
-// Fråga 6. (2p) Shoppingcart 
+// Fråga 6. (2p) Shoppingcart
 // Slutför funktionen calculateTotalPrice som tar emot en array med
 // produkter som input och returnerar det totala priset
 
@@ -13,10 +13,14 @@ const products2 = [
   { name: "Hat", brand: "New_Era", model: "Snapback", price: 35 },
 ];
 
-
 function calculateTotalPrice(shoppingCart) {
   // Din kod här:
- 
+  const totalPrice = shoppingCart
+    .map((item) => item.price)
+    .reduce((arr, curr) => {
+      return arr + curr;
+    }, 0);
+  return totalPrice;
 }
 
 console.log(calculateTotalPrice(products)); // Ska logga 140
